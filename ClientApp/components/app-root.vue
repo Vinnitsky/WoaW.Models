@@ -29,6 +29,10 @@ import LeftSidePanel from "./ide/app-left-side-panel.vue";
 import RightSidePanel from "./ide/app-right-side-panel.vue";
 import AppFooter from "./ide/app-footer.vue";
 
+import ProductNew from 'components/views/product-new'
+import ProductList from 'components/views/product-list'
+import ProductSettings from 'components/views/product-settings'
+
 Vue.component("counter-example", CounterExample);
 Vue.component("fetch-data", FetchData);
 Vue.component("home-page", HomePage);
@@ -38,6 +42,10 @@ Vue.component("ide-app-bar", AppBar);
 Vue.component("ide-left-side-panel", LeftSidePanel);
 Vue.component("ide-right-side-panel", RightSidePanel);
 Vue.component("ide-app-footer", AppFooter);
+
+// Vue.component("product-new", ProductNew);
+// Vue.component("product-lis", ProductList);
+// Vue.component("product-settings", ProductSettings);
 
 export default {
   data() {

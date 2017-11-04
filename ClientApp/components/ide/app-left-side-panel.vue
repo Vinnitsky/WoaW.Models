@@ -1,4 +1,4 @@
-<template >  
+<template >
   <aside id="leftSidePanel" class="aside">
             <!-- START Sidebar (left)-->
             <div class="aside-inner">
@@ -45,7 +45,7 @@
                                     <a href="MainView.html" title="M1">
                                         <span>Main</span>
                                     </a>
-                                </li>                                
+                                </li>
                             </ul>
                         </li>
 
@@ -90,20 +90,30 @@
                             <ul id="products" class="nav sidebar-subnav collapse">
                                 <li class="sidebar-subnav-header">MM</li>
                                  <li class=" active">
-                                    <a href="#/ProductList" title="M1">
+                                    <a href="/product-list" title="M1">
                                         <em class="icon-list-group"></em>
                                         <span  data-localize="sidebar.nav.PRODUCTS.List">List</span>
                                     </a>
                                 </li>
                                 <li class=" ">
-                                    <a href="#/ProductNew" title="M2">
+                                    <a href="/product-new" title="M2">
                                         <em class="icon-new"></em>
                                         <span data-localize="sidebar.nav.PRODUCTS.New">New</span>
                                     </a>
-                                </li>                               
+                                </li>
                                 <li class=" ">
-                                    <a href="#/ProductSettings" title="M3">
+                                    <a href="/product-settings" title="M3">
                                         <span>Product Settings</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="/fetch-data" title="M3">
+                                        <span>fetch data link</span>
+                                    </a>
+                                </li>
+                                <li class=" ">
+                                    <a href="/counter" title="M3">
+                                     <span>counter link</span>
                                     </a>
                                 </li>
                             </ul>
@@ -130,7 +140,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-heading ">
                             <span data-localize="sidebar.heading.COMPONENTS">Components</span>
                         </li>

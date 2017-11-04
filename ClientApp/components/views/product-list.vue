@@ -298,10 +298,48 @@ import "jquery.dataTables.min.js/js/jquery.dataTables.min.js";
 import "dataTables-bootstrap/js/dataTables.bootstrap.js";
 // import "../../../wwwroot/js/demo/demo-datatable.js";
 
+import ProductService from "../services/product-services.js";
+import axios from "axios";
+
 export default {
   name: "listProduct",
   data() {
-    return {};
+    return {
+      status: {},
+      products: {},
+      errors: []
+    };
+  },
+  created() {
+    this.refrashPage();
+  },
+  methods: {
+    refrashPage() {
+      axios
+        .get("http://localhost:5000/api/ProductData/WeatherForecasts") //.get("/api/status/${this.item.id}")
+        .then(res => {
+          debugger;
+          this.products = res.data;
+          this.status = res.status;
+        })
+        .catch(e => {
+          debugger;
+          this.errors.push(e);
+        });
+    }
+    // refrashPage: async function() {
+    //   //   this.products = await ProductService.getProducts();
+    //   try {
+    //     debugger;
+    //     const response = await axios.get(
+    //       "http://localhost:5000/api/ProductData/WeatherForecasts"
+    //     );
+    //     this.products = response.data;
+    //   } catch (e) {
+    //     debugger;
+    //     this.errors.push(e);
+    //   }
+    // }
   }
 };
 </script>

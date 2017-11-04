@@ -116,17 +116,17 @@
                         </li>
                         <li class=" ">
                             <router-link :to="links.productListLink">
-                                 <span>list link</span>
+                                 <span>list link (right)</span>
                             </router-link>
                         </li>
                         <li class=" ">
                             <a v-bind:href="links.productNewLink" >
-                                <span>new link</span>
+                                <span>new link(wrong)</span>
                             </a>
                         </li>
                          <li class=" ">
                             <a v-bind:href="links.productNewLink" >
-                                <span>new link</span>
+                                <span>new link(wrong)</span>
                                 {{links.productNewLink}}
                             </a>
                         </li>

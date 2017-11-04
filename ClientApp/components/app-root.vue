@@ -8,6 +8,7 @@
                 <router-view></router-view>
             </div>
         </div> -->
+
         <header class="topnavbar-wrapper">
             <ide-app-bar/>
          </header>

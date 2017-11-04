@@ -48,7 +48,6 @@
                     </ul>
                 </li>
 
-
                 <li class=" ">
                     <a href="#dashboard" title="Dashboard" data-toggle="collapse">
                         <div class="pull-right label label-info">3</div>
@@ -113,6 +112,17 @@
                         <li class=" ">
                             <a href="/counter" title="M3">
                                 <span>counter link</span>
+                            </a>
+                        </li>
+                        <li class=" ">
+                            <router-link :to="links.productListLink">
+                                 <span>list link</span>
+                            </router-link>
+
+                        </li>
+                        <li class=" ">
+                            <a v-bind:href="links.productNewLink" >
+                                <span>new link</span>
                             </a>
                         </li>
                     </ul>
@@ -690,7 +700,10 @@ export default {
   name: "leftSidePanel",
   data() {
     return {
-      name: "Vinnitsky"
+      name: "Vinnitsky",
+      links: {
+          productListLink: '/product-list',
+          productNewLink:'/product-new' }
     };
   }
 };

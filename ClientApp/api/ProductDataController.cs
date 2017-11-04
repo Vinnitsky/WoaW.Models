@@ -31,6 +31,7 @@ namespace Vue2SpaSignalR.Controllers
                     Price="$ 14.00", Quantity="253",Status="Removed",Added="04/10/2015"
                 },
             };
+            return products;
             // var rng = new Random();
             // return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             // {

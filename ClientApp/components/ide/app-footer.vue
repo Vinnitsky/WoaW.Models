@@ -1,9 +1,7 @@
 
 <template >
     <div id="appFooter">
-      <footer>
-            <span>&copy; {{year}} - {{author}}</span>
-        </footer>
+        <span>&copy; {{year}} - {{author}}</span>
     </div>
 </template>
 

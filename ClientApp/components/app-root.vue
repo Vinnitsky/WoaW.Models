@@ -8,11 +8,25 @@
                 <router-view></router-view>
             </div>
         </div> -->
-        <ide-app-bar/>
-        <ide-left-side-panel/>
-        <ide-right-side-panel/>
+        <header class="topnavbar-wrapper">
+            <ide-app-bar/>
+         </header>
+
+        <aside  class="aside">
+            <ide-left-side-panel/>
+        </aside>
+
+        <aside class="offsidebar hide">
+            <ide-right-side-panel/>
+         </aside>
+
+        <section>
             <router-view></router-view>
-        <ide-app-footer/>
+        </section>
+
+        <footer>
+            <ide-app-footer/>
+        </footer>
     </div>
 
 </template>
@@ -43,9 +57,6 @@ Vue.component("ide-left-side-panel", LeftSidePanel);
 Vue.component("ide-right-side-panel", RightSidePanel);
 Vue.component("ide-app-footer", AppFooter);
 
-// Vue.component("product-new", ProductNew);
-// Vue.component("product-lis", ProductList);
-// Vue.component("product-settings", ProductSettings);
 
 export default {
   data() {

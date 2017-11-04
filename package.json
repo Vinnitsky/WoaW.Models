@@ -54,6 +54,8 @@
         "screenfull": "^3.3.2",
         "sparkline": "^0.2.0",
         "jquery.flot": "^0.8.3",
-        "jquery.flot.tooltip": "^0.9.0"
+        "jquery.flot.tooltip": "^0.9.0",
+        "jquery.dataTables.min.js": "^1.10.5",
+        "datatables-bootstrap": "^0.0.1"
     }
 }

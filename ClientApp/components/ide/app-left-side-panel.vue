@@ -118,11 +118,16 @@
                             <router-link :to="links.productListLink">
                                  <span>list link</span>
                             </router-link>
-
                         </li>
                         <li class=" ">
                             <a v-bind:href="links.productNewLink" >
                                 <span>new link</span>
+                            </a>
+                        </li>
+                         <li class=" ">
+                            <a v-bind:href="links.productNewLink" >
+                                <span>new link</span>
+                                {{links.productNewLink}}
                             </a>
                         </li>
                     </ul>
@@ -703,7 +708,8 @@ export default {
       name: "Vinnitsky",
       links: {
           productListLink: '/product-list',
-          productNewLink:'/product-new' }
+          productNewLink:'/product-new',
+          productSettingsLink:'/product-settings' }
     };
   }
 };

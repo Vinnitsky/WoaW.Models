@@ -13,6 +13,7 @@
         "axios": "^0.17.0",
         "core-js": "^2.5.1",
         "eslint": "^4.10.0",
+        "eslint-plugin-html": "^3.2.2",
         "font-awesome": "^4.7.0",
         "vue": "^2.5.3",
         "vue-router": "^3.0.1",

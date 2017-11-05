@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Vue2SpaSignalR.Controllers
+namespace WoaW.Models.Products.Controllers
 {
     [Route("api/[controller]")]
     public class ProductDataController : Controller
@@ -18,15 +18,15 @@ namespace Vue2SpaSignalR.Controllers
         {
             var products =  new List<ProductModel>()
             {
-                new Product(){
+                new ProductModel(){
                     Id="0001", Name="Product 1", Description="Description for Product",
                     Price="$ 12.20", Quantity="233",Status="Stock",Added="04/10/2015"
                 },
-                new Product(){
+                new ProductModel(){
                     Id="0002", Name="Product 2", Description="Description for Product",
                     Price="$ 12.20", Quantity="243",Status="Stock",Added="04/10/2015"
                 },
-                new Product(){
+                new ProductModel(){
                     Id="0003", Name="Product 3", Description="Description for Product",
                     Price="$ 14.00", Quantity="253",Status="Removed",Added="04/10/2015"
                 },

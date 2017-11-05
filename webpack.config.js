@@ -11,8 +11,10 @@ module.exports = (env) => {
         resolve: {
             extensions: ['.js', '.vue'],
             alias: {
-                'vue$': 'vue/dist/vue',
+                'vue$': 'vue/dist/vue',                
+                'vendor': path.resolve(__dirname, './wwwroot/vendor'),
                 'components': path.resolve(__dirname, './ClientApp/components'),
+                'modules': path.resolve(__dirname, './ClientApp/modules'),
                 'views': path.resolve(__dirname, './ClientApp/views'),
                 'utils': path.resolve(__dirname, './ClientApp/utils'),
                 'api': path.resolve(__dirname, './ClientApp/store/api')

@@ -1,5 +1,5 @@
 <template >
-    <div id="listProduct" class="content-wrapper">
+    <div id="productListView" class="content-wrapper">
         <div class="content-heading">Products</div>
         <div class="table-responsive b0">
             <table id="datatable1" class="table table-striped table-hover">
@@ -281,28 +281,30 @@
 <style lang="scss">
 //https://github.com/vuejs-templates/webpack/issues/604
 // https://stackoverflow.com/questions/43784202/how-to-include-css-files-in-vue-2
-// @import "src/assets/css/mycss_lib.css";
-//@import "ycss_lib/mycss_lib.css"; //if included in project
-@import "../../../wwwroot/vendor/datatables-colvis/css/dataTables.colVis.css";
-@import "../../../wwwroot/vendor/datatables/media/css/dataTables.bootstrap.css";
+// @import "vendor/datatables-colvis/css/dataTables.colVis.css";
+// @import "vendor/datatables/media/css/dataTables.bootstrap.css";
+// // @import "datatables-bootstrap/css/dataTables.bootstrap.css";
+// @import "vendor/dataTables.fontAwesome/index.css";
+@import "../../../../wwwroot/vendor/datatables-colvis/css/dataTables.colVis.css";
+@import "../../../../wwwroot/vendor/datatables/media/css/dataTables.bootstrap.css";
 // @import "datatables-bootstrap/css/dataTables.bootstrap.css";
-@import "../../../wwwroot/vendor/dataTables.fontAwesome/index.css";
+@import "../../../../wwwroot/vendor/dataTables.fontAwesome/index.css";
 </style>
 
 <script>
 //https://docs.npmjs.com/files/package.json
 //https://stackoverflow.com/questions/14381898/local-dependency-in-package-json
 import "jquery.dataTables.min.js/js/jquery.dataTables.min.js";
-// import "../../../wwwroot/vendor/datatables-colvis/js/dataTables.colVis.js";
-// import "../../../wwwroot/vendor/datatables/media/js/dataTables.bootstrap.js";
+import "vendor/datatables-colvis/js/dataTables.colVis.js";
 import "dataTables-bootstrap/js/dataTables.bootstrap.js";
 // import "../../../wwwroot/js/demo/demo-datatable.js";
 
-import ProductService from "../services/product-services.js";
+// import ProductService from "comonents/services/product-services";
+
 import axios from "axios";
 
 export default {
-  name: "listProduct",
+  name: "productListView",
   data() {
     return {
       status: {},

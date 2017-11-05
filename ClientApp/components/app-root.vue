@@ -44,9 +44,9 @@ import LeftSidePanel from "./ide/app-left-side-panel.vue";
 import RightSidePanel from "./ide/app-right-side-panel.vue";
 import AppFooter from "./ide/app-footer.vue";
 
-import ProductNew from 'components/views/product-new'
-import ProductList from 'components/views/product-list'
-import ProductSettings from 'components/views/product-settings'
+import ProductNew from 'modules/products/views/ProductNewView';
+import ProductList from 'modules/products/views/ProductListView';
+import ProductSettings from 'modules/products/views/ProductSettingsView';
 
 Vue.component("counter-example", CounterExample);
 Vue.component("fetch-data", FetchData);

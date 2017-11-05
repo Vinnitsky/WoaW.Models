@@ -1,10 +1,10 @@
-import CounterExample from 'components/counter-example'
-import FetchData from 'components/fetch-data'
-import HomePage from 'components/home-page'
+import CounterExample from 'components/counter-example';
+import FetchData from 'components/fetch-data';
+import HomePage from 'components/home-page';
 
-import ProductNew from 'components/views/product-new'
-import ProductList from 'components/views/product-list'
-import ProductSettings from 'components/views/product-settings'
+import ProductNew from 'modules/products/views/ProductNewView';
+import ProductList from 'modules/products/views/ProductListView';
+import ProductSettings from 'modules/products/views/ProductSettingsView';
 
 export const routes = [
     { path: '/', component: HomePage, display: 'Home', style: 'glyphicon glyphicon-home' },

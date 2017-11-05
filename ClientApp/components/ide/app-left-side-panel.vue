@@ -78,8 +78,9 @@
                 <li class="nav-heading ">
                     <span data-localize="sidebar.heading.PRODUCTS">Products</span>
                 </li>
+                <product-navi-component v-bind:itemsSource="productsMenu" header="Products"/>
 
-                <li class=" ">
+                <!-- <li class=" ">
                     <a href="#products" title="Products" data-toggle="collapse">
                         <div class="pull-right label label-info">3</div>
                         <em class="icon-speedometer"></em>
@@ -131,7 +132,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <!-- ========================== -->
                 <li class=" ">
                     <a href="widgets.html" title="Widgets">
@@ -701,15 +702,29 @@
 </template>
 
 <script>
+import ProductNaviComponent from "modules/products/components/product-navi-control";
+// import Vue from "vue";
+// Vue.component( {'product-navi-component': ProductNaviComponent});
+
 export default {
   name: "leftSidePanel",
+  components: { "product-navi-component": ProductNaviComponent },
+  created() {
+    this.productsMenu = [
+      { title: "List", link: "/product-list" },
+      { title: "New", link: "/product-new" },
+      { title: "Settings", link: "/product-settings" }
+    ];
+  },
   data() {
     return {
       name: "Vinnitsky",
       links: {
-          productListLink: '/product-list',
-          productNewLink:'/product-new',
-          productSettingsLink:'/product-settings' }
+        productListLink: "/product-list",
+        productNewLink: "/product-new",
+        productSettingsLink: "/product-settings"
+      },
+      productsMenu: []
     };
   }
 };

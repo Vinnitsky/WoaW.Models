@@ -77,13 +77,11 @@ export default {
   },
   created() {},
   data() {
-    return {
-      items: []
-    };
+    return {};
   },
   computed: {
     status2: function(item) {
-        switch (item.status) {
+      switch (item.status) {
         case 1:
           return { css: "label label-success", text: "Stock" };
           break;

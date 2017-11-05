@@ -1,7 +1,7 @@
 <template >
     <div id="productListView" class="content-wrapper">
         <div class="content-heading">Products</div>
-        <product-list/>
+        <product-list v-bind:itemsSource="products"/>
     </div>
 </template>
 
@@ -30,7 +30,7 @@ import axios from "axios";
 // import ProductService from "comonents/services/product-services";
 
 export default {
-    components : {"product-list":ProductListComponent},
+  components: { "product-list": ProductListComponent },
   name: "productListView",
   data() {
     return {
@@ -40,7 +40,37 @@ export default {
     };
   },
   created() {
-    this.refrashPage();
+    this.products = [
+      {
+        Id: "0001",
+        Name: "Product 1",
+        Description: "Description for Product",
+        Price: "$12.36",
+        Quantity: 243,
+        status: 1,
+        Added: "04/10/2017"
+      },
+      {
+        Id: "0002",
+        Name: "Product 2",
+        Description: "Description for Product",
+        Price: "$12.36",
+        Quantity: 243,
+        status: 2,
+        Added: "04/10/2017"
+      },
+      {
+        Id: "0003",
+        Name: "Product 3",
+        Description: "Description for Product",
+        Price: "$12.36",
+        Quantity: 243,
+        status: 3,
+        Added: "04/10/2017"
+      }
+    ];
+    // this.products=[];
+    //this.refrashPage();
   },
   methods: {
     refrashPage() {
@@ -50,6 +80,7 @@ export default {
           debugger;
           this.products = res.data;
           this.status = res.status;
+          console.log(this.products);
         })
         .catch(e => {
           debugger;

@@ -1,5 +1,9 @@
 <template >
     <div id="productList" class="table-responsive b0">
+        <div v-if="itemsSource.length ===0">
+            {{emptyContainerHint}}
+        </div>
+
         <table id="datatable1" class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -29,259 +33,88 @@
                 </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                <td>0001</td>
-                <td>Product 1</td>
-                <td>Description for Product</td>
-                <td>$ 12.20</td>
-                <td>233</td>
+            <tbody>               
+                <tr v-for="item in itemsSource" :key="item.Id">
+                <td>{{item.Id}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Price}}</td>
+                <td>{{item.Quantity}}</td>
                 <td class="text-center">
-                    <span class="label label-success">Stock</span>
+                    <span class="label label-success" :class="toEnum(item).css">{{toEnum(item).text}}</span>
                 </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0002</td>
-                <td>Product 2</td>
-                <td>Description for Product</td>
-                <td>$ 13.20</td>
-                <td>243</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
+                <td>{{item.Added}}</td>
                 <td class="text-center">
                     <button type="button" class="btn btn-sm btn-default">
                         <em class="fa fa-search"></em>
                     </button>
                 </td>
                 </tr>
-                <tr>
-                <td>0003</td>
-                <td>Product 3</td>
-                <td>Description for Product</td>
-                <td>$ 14.20</td>
-                <td>253</td>
-                <td class="text-center">
-                    <span class="label label-danger">Removed</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0004</td>
-                <td>Product 4</td>
-                <td>Description for Product</td>
-                <td>$ 15.20</td>
-                <td>263</td>
-                <td class="text-center">
-                    <span class="label label-warning">Out of Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0005</td>
-                <td>Product 5</td>
-                <td>Description for Product</td>
-                <td>$ 16.20</td>
-                <td>273</td>
-                <td class="text-center">
-                    <span class="label label-danger">Removed</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0006</td>
-                <td>Product 6</td>
-                <td>Description for Product</td>
-                <td>$ 17.20</td>
-                <td>283</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0007</td>
-                <td>Product 7</td>
-                <td>Description for Product</td>
-                <td>$ 18.20</td>
-                <td>293</td>
-                <td class="text-center">
-                    <span class="label label-danger">Removed</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0008</td>
-                <td>Product 8</td>
-                <td>Description for Product</td>
-                <td>$ 19.20</td>
-                <td>2103</td>
-                <td class="text-center">
-                    <span class="label label-warning">Out of Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>0009</td>
-                <td>Product 9</td>
-                <td>Description for Product</td>
-                <td>$ 110.20</td>
-                <td>2113</td>
-                <td class="text-center">
-                    <span class="label label-danger">Removed</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00010</td>
-                <td>Product 10</td>
-                <td>Description for Product</td>
-                <td>$ 111.20</td>
-                <td>2123</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00011</td>
-                <td>Product 11</td>
-                <td>Description for Product</td>
-                <td>$ 112.20</td>
-                <td>2133</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00012</td>
-                <td>Product 12</td>
-                <td>Description for Product</td>
-                <td>$ 113.20</td>
-                <td>2143</td>
-                <td class="text-center">
-                    <span class="label label-warning">Out of Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00013</td>
-                <td>Product 13</td>
-                <td>Description for Product</td>
-                <td>$ 114.20</td>
-                <td>2153</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00014</td>
-                <td>Product 14</td>
-                <td>Description for Product</td>
-                <td>$ 115.20</td>
-                <td>2163</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
-                <tr>
-                <td>00015</td>
-                <td>Product 15</td>
-                <td>Description for Product</td>
-                <td>$ 116.20</td>
-                <td>2173</td>
-                <td class="text-center">
-                    <span class="label label-success">Stock</span>
-                </td>
-                <td>04/10/2015</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
-                        <em class="fa fa-search"></em>
-                    </button>
-                </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
 </template>
 
 <script>
+// https://www.youtube.com/watch?v=RjU8dB2vrE8&t=204s
 export default {
   name: "productList",
+  props: {
+    itemsSource: {
+      type: Array,
+      //   required: true,
+      default: function() {
+        return [];
+      }
+    },
+    emptyContainerHint: {
+      type: String,
+      default: function() {
+        return "Collection is empty";
+      }
+    }
+  },
+  created() {},
   data() {
     return {
-        items:[]
+      items: []
     };
+  },
+  computed: {
+    status2: function(item) {
+        switch (item.status) {
+        case 1:
+          return { css: "label label-success", text: "Stock" };
+          break;
+        case 2:
+          return { css: "label label-warning", text: "Out of stock" };
+          break;
+        case 3:
+          return { css: "label label-danger", text: "Removed" };
+          break;
+        default:
+          return { css: "label label-success", text: "Stock" };
+      }
+    }
+  },
+  methods: {
+    refresh() {},
+    toEnum(item) {
+      switch (item.status) {
+        case 1:
+          return { css: "label label-success", text: "Stock" };
+          break;
+        case 2:
+          return { css: "label label-warning", text: "Out of stock" };
+          break;
+        case 3:
+          return { css: "label label-danger", text: "Removed" };
+          break;
+        default:
+          return { css: "label label-success", text: "Stock" };
+      }
+    }
   }
 };
 </script>

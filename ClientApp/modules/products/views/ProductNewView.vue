@@ -225,6 +225,9 @@ export default {
   name: "newProduct",
   data() {
     return {};
+  },
+  created() {    
+    var id = this.$route.query.id;
   }
 };
 </script>

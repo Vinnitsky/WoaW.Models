@@ -45,7 +45,7 @@
                 </td>
                 <td>{{item.added}}</td>
                 <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-default">
+                    <button type="button" v-on:click="onClick(item)" class="btn btn-sm btn-default">
                         <em class="fa fa-search"></em>
                     </button>
                 </td>
@@ -95,6 +95,13 @@ export default {
         default:
           return { css: "label label-success", text: "Stock" };
       }
+    },
+    onClick(item){      
+      let url = 'http://localhost:5000/api/ProductData/'+item.id;
+      console.log(url);
+      // https://router.vuejs.org/en/essentials/navigation.html
+      // this.$route.router.go('/product-new');//"/api/status/${this.item.id}"     
+      this.$router.push({ path: 'product-new', query: { id: item.id }});
     }
   }
 };

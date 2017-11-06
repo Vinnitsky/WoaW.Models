@@ -1,8 +1,8 @@
 <template >
 
  <li class=" ">
-                    <a href="#products" title="Products" data-toggle="collapse">
-                        <div class="pull-right label label-info">3</div>
+                    <a href="#products" title="Products" data-toggle="collapse">                        
+                        <div v-if="headerNumber!==null" class="pull-right label label-info">{{headerNumber}}</div>
                         <em class="icon-speedometer"></em>
                         <span data-localize="sidebar.nav.PRODUCTS.Header">{{header}}</span>
                     </a>
@@ -54,7 +54,12 @@
 <!-- active -->
                         <li class=" " v-for="item in itemsSource" :key="item.title">
                            <router-link :to="item.link">
-                                 <span>{{item.title}}</span>
+                               <!-- TODO: figute out how to setup attribute value from component -->
+
+                                <div v-if="item.number!==null" class="pull-right label" v-bind="{class:item.numberClass}" >{{item.number}}</div>
+
+                                <em class="icon-list-group"></em>
+                                 <span data-localize="sidebar.nav.PRODUCTS.itemName">{{item.title}}</span>
                             </router-link>
                         </li>
                     </ul>
@@ -76,7 +81,13 @@ export default {
     header: {
       type: String,
       default: function() {
-        return "Collection is empty";
+        return "Menu Header";
+      }
+    },
+    headerNumber: {
+      type: String,
+      default: function() {
+        return "0";
       }
     }
   },

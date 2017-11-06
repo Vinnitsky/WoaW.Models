@@ -78,24 +78,7 @@ export default {
   created() {},
   data() {
     return {};
-  },
-  computed: {
-    status2: function(item) {
-      switch (item.status) {
-        case 1:
-          return { css: "label label-success", text: "Stock" };
-          break;
-        case 2:
-          return { css: "label label-warning", text: "Out of stock" };
-          break;
-        case 3:
-          return { css: "label label-danger", text: "Removed" };
-          break;
-        default:
-          return { css: "label label-success", text: "Stock" };
-      }
-    }
-  },
+  }, 
   methods: {
     refresh() {},
     toEnum(item) {

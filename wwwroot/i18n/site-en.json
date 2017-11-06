@@ -19,8 +19,9 @@
       "DOCUMENTATION": "Documentation",
       "PRODUCTS":{
         "Header":"Products",
-        "List":"Product List",
-        "New":"New Product"
+        "List":"List",
+        "New":"New",
+        "Settings":"Settings"
       },
       "element": {
         "ELEMENTS": "Elements",

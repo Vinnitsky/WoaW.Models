@@ -40,44 +40,14 @@ export default {
     };
   },
   created() {
-    this.products = [
-      {
-        Id: "0001",
-        Name: "Product 1",
-        Description: "Description for Product",
-        Price: "$12.36",
-        Quantity: 243,
-        status: 1,
-        Added: "04/10/2017"
-      },
-      {
-        Id: "0002",
-        Name: "Product 2",
-        Description: "Description for Product",
-        Price: "$12.36",
-        Quantity: 243,
-        status: 2,
-        Added: "04/10/2017"
-      },
-      {
-        Id: "0003",
-        Name: "Product 3",
-        Description: "Description for Product",
-        Price: "$12.36",
-        Quantity: 243,
-        status: 3,
-        Added: "04/10/2017"
-      }
-    ];
-    // this.products=[];
+    this.products = [];
     this.refrashPage();
   },
   methods: {
     refrashPage() {
       axios
         .get("http://localhost:5000/api/ProductData/") //.get("/api/status/${this.item.id}")
-        .then(res => {
-          debugger;
+        .then(res => {          
           this.products = res.data;
           this.status = res.status;
           console.log(this.products);

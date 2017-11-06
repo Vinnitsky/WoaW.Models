@@ -78,7 +78,9 @@
                 <li class="nav-heading ">
                     <span data-localize="sidebar.heading.PRODUCTS">Products</span>
                 </li>
-                <product-navi-component v-bind:itemsSource="productsMenu" header="Products" headerNumber="3"/>
+                <product-navi-component v-bind:itemsSource="productsMenu" 
+                    header="{text:'Products', number:3, icon:'icon-speedometer'}"
+                    headerText="Products" headerIcon="icon-speedometer" headerNumber="3"/>
 
                 <!-- <li class=" ">
                     <a href="#products" title="Products" data-toggle="collapse">
@@ -711,9 +713,9 @@ export default {
   components: { "product-navi-component": ProductNaviComponent },
   created() {
     this.productsMenu = [
-      { title: "List", link: "/product-list", number:null, numberClass:null },
-      { title: "New", link: "/product-new", number:2, numberClass:'label-info'},
-      { title: "Settings", link: "/product-settings", number:1, numberClass:'label-success' }
+      { title: "List", link: "/product-list",   localizationPath:"sidebar.nav.PRODUCTS.List", icon:"icon-speedometer" },
+      { title: "New", link: "/product-new", number:2, numberClass:'label-info', localizationPath:"sidebar.nav.PRODUCTS.New" },
+      { title: "Settings", link: "/product-settings", number:1, numberClass:'label-success' , localizationPath:"sidebar.nav.PRODUCTS.Settings" }
     ];
   },
   data() {

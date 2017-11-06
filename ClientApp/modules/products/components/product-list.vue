@@ -35,15 +35,15 @@
             </thead>
             <tbody>               
                 <tr v-for="item in itemsSource" :key="item.Id">
-                <td>{{item.Id}}</td>
-                <td>{{item.Name}}</td>
-                <td>{{item.Description}}</td>
-                <td>{{item.Price}}</td>
-                <td>{{item.Quantity}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
                 <td class="text-center">
                     <span class="label label-success" :class="toEnum(item).css">{{toEnum(item).text}}</span>
                 </td>
-                <td>{{item.Added}}</td>
+                <td>{{item.added}}</td>
                 <td class="text-center">
                     <button type="button" class="btn btn-sm btn-default">
                         <em class="fa fa-search"></em>

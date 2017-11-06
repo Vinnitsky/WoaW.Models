@@ -70,12 +70,12 @@ export default {
       }
     ];
     // this.products=[];
-    //this.refrashPage();
+    this.refrashPage();
   },
   methods: {
     refrashPage() {
       axios
-        .get("http://localhost:5000/api/ProductData/WeatherForecasts") //.get("/api/status/${this.item.id}")
+        .get("http://localhost:5000/api/ProductData/") //.get("/api/status/${this.item.id}")
         .then(res => {
           debugger;
           this.products = res.data;

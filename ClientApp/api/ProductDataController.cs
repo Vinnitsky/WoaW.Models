@@ -13,22 +13,28 @@ namespace WoaW.Models.Products.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        [HttpGet("[action]")]
+        [HttpGet()]
         public IEnumerable<ProductModel> Get()
+        {
+            return GetProducts();
+        }
+
+        [HttpGet("[action]")]
+        public IEnumerable<ProductModel> GetProducts()
         {
             var products =  new List<ProductModel>()
             {
                 new ProductModel(){
                     Id="0001", Name="Product 1", Description="Description for Product",
-                    Price="$ 12.20", Quantity="233",Status="Stock",Added="04/10/2015"
+                    Price="$ 12.20", Quantity="233",Status=1,Added="04/10/2015"
                 },
                 new ProductModel(){
                     Id="0002", Name="Product 2", Description="Description for Product",
-                    Price="$ 12.20", Quantity="243",Status="Stock",Added="04/10/2015"
+                    Price="$ 12.20", Quantity="243",Status=2,Added="04/10/2015"
                 },
                 new ProductModel(){
                     Id="0003", Name="Product 3", Description="Description for Product",
-                    Price="$ 14.00", Quantity="253",Status="Removed",Added="04/10/2015"
+                    Price="$ 14.00", Quantity="253",Status=3,Added="04/10/2015"
                 },
             };
             return products;
@@ -40,7 +46,6 @@ namespace WoaW.Models.Products.Controllers
             //     Summary = Summaries[rng.Next(Summaries.Length)]
             // });
         }
-
 
     }
 }

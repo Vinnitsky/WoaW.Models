@@ -19,8 +19,7 @@
                         <li class=" " v-for="item in itemsSource" :key="item.title">
                            <router-link :to="item.link">
                                 <div v-if="item.number!==undefined" class="pull-right label" v-bind="{class:item.numberClass}" >{{item.number}}</div>
-                                 <em v-if="item.icon!==undefined" v-bind="{'class':item.icon}"></em>
-                                 <!-- TODO: figute out how to setup attribute value from component -->
+                                 <em v-if="item.icon!==undefined" v-bind="{'class':item.icon}"></em>                                
                                  <span  v-bind="{'data-localize':item.localizationPath}">{{item.title}}</span>
                             </router-link>
                         </li>

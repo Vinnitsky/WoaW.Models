@@ -60,13 +60,14 @@
                     </ul>
                 </li>
 
-                <!-- ============================ -->
+                <!-- ============================PRODUCTS======================== -->
                 <li class="nav-heading ">
                     <span data-localize="sidebar.heading.PRODUCTS">Products</span>
                 </li>
-                <product-navi-component v-bind:itemsSource="productsMenu"
+                <product-navi-component v-bind:itemsSource="productsMenu.items"
                     header="{text:'Products', number:3, icon:'icon-speedometer'}"
-                    headerText="Products" headerIcon="icon-speedometer" headerNumber="3"/>
+                    headerText="Products" headerIcon="icon-speedometer" headerNumber="3"
+                    headerLink="#products"  headerLocalizationPath="sidebar.nav.PRODUCTS.Header"/>
 
                         <!-- <em class="icon-grid"></em>
                         <em class="icon-layers"></em>
@@ -83,12 +84,23 @@
                  <li class="nav-heading ">
                     <span data-localize="sidebar.heading.Docs">Documentation</span>
                 </li>
-                <li class=" ">
-                    <a href="documentation.html" title="Documentation">
+                <product-navi-component v-bind:itemsSource="documentationsMenu.items"
+                    headerText="Documentation" headerIcon="icon-graduation"
+                    headerNumber="3" headerLink="#docs" headerLocalizationPath="sidebar.nav.DOCUMENTATION.Header"/>
+
+                        <!--
+                        <em class="icon-grid"></em>
+                        <em class="icon-layers"></em>
+                        <em class="icon-chemistry"></em>
+                        <em class="icon-note"></em>
+                        <em class="icon-graph"></em>
+                        <em class="icon-grid"></em>
+                        <em class="icon-map"></em>
+                        <em class="icon-doc"></em>
+                        <em class="icon-cup"></em>
+                        <em class="fa fa-folder-open-o"></em>
                         <em class="icon-graduation"></em>
-                        <span data-localize="sidebar.nav.DOCUMENTATION">Documentation</span>
-                    </a>
-                </li>
+                 -->
             </ul>
             <!-- END sidebar nav-->
         </nav>
@@ -105,21 +117,21 @@ export default {
   name: "leftSidePanel",
   components: { "product-navi-component": ProductNaviComponent },
   created() {
-    this.productsMenu = [
+    this.productsMenu = {header:{},items:[
       { title: "List", link: "/product-list",   localizationPath:"sidebar.nav.PRODUCTS.List", icon:"icon-speedometer" },
       { title: "New", link: "/product-new", number:2, numberClass:'label-info', localizationPath:"sidebar.nav.PRODUCTS.New" },
       { title: "Settings", link: "/product-settings", number:1, numberClass:'label-success' , localizationPath:"sidebar.nav.PRODUCTS.Settings" }
-    ];
+    ]};
+    this.documentationsMenu = {header:{},items:[
+      { title: "About", link: "/docs-about",    localizationPath:"sidebar.nav.DOCUMENTATION.About", icon:"icon-graduation" },
+      { title: "Documentation", link: "/docs",  localizationPath:"sidebar.nav.DOCUMENTATION.Docs", icon:"icon-graduation" }
+    ]};
   },
   data() {
     return {
       name: "Vinnitsky",
-      links: {
-        productListLink: "/product-list",
-        productNewLink: "/product-new",
-        productSettingsLink: "/product-settings"
-      },
-      productsMenu: []
+      productsMenu: {},
+      documentationsMenu:{}
     };
   }
 };

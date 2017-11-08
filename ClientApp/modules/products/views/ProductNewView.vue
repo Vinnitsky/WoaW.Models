@@ -225,21 +225,21 @@
 import axios from "axios";
 
 export const HTTP = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: "http://localhost:5000/",
   headers: {
-    Authorization: 'Bearer {token}'
+    Authorization: "Bearer {token}"
   }
-})
+});
 export default {
   name: "newProduct",
   data() {
     return {
-     errors:[],
+      errors: [],
       product: {
-        name: '',
-        description:'',
-        price:0,
-        quantity:0
+        name: "",
+        description: "",
+        price: 0,
+        quantity: 0
       }
     };
   },
@@ -248,50 +248,53 @@ export default {
   },
   methods: {
     onSave() {
-
-       debugger;
-       if(this.product.id===undefined)
-            Create();
-        else
-            Update();
+      debugger;
+      if (this.product.id === undefined)
+        Create();
+      else
+        Update();
     },
     onDiscard() {},
+    Create() {
+      debugger;
 
-    Create(){
-           debugger;
-
-        //https://github.com/axios/axios
-        //Content-Type: application/json; charset=utf-8
-        HTTP
+      //https://github.com/axios/axios
+      //Content-Type: application/json; charset=utf-8
+      HTTP
         //.post('api/ProductData/', { body: this.product })
         //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
-        .post('api/ProductData/',  this.product, { headers: {'Content-Type': 'application/json'}} ) //work
+        .post("api/ProductData/", this.product, {
+          headers: { "Content-Type": "application/json" }
+        }) //work
         .then(response => {
-            console.log("post is OK");
+          console.log("post is OK");
         })
         .catch(e => {
-            debugger;
-            this.errors.push(e);
+          debugger;
+          this.errors.push(e);
         });
     },
-    Update()
-    {
-           debugger;
-     //https://github.com/axios/axios
-        //Content-Type: application/json; charset=utf-8
-        HTTP
-            //.post('api/ProductData/', { body: this.product })
-                //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
-                //.post('api/ProductData/',  this.product,{ headers: {'Content-Type': 'application/json'}} ) //work
-                .post('api/ProductData/',  {id:'001', model:this.product}, { headers: {'Content-Type': 'application/json'}} )
-            .then(response => {
-              console.log("post is OK");
-            })
-            .catch(e => {
-              debugger;
-              this.errors.push(e);
-            });
-        }
+    Update() {
+      debugger;
+      //https://github.com/axios/axios
+      //Content-Type: application/json; charset=utf-8
+      HTTP
+        //.post('api/ProductData/', { body: this.product })
+        //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
+        //.post('api/ProductData/',  this.product,{ headers: {'Content-Type': 'application/json'}} ) //work
+        .post(
+          "api/ProductData/",
+          { id: "001", model: this.product },
+          { headers: { "Content-Type": "application/json" } }
+        )
+        .then(response => {
+          console.log("post is OK");
+        })
+        .catch(e => {
+          debugger;
+          this.errors.push(e);
+        });
     }
+  }
 };
 </script>

@@ -250,9 +250,9 @@ export default {
     onSave() {
       debugger;
       if (this.product.id === undefined)
-        Create();
+        this.Create();
       else
-        Update();
+        this.Update();
     },
     onDiscard() {},
     Create() {

@@ -7,7 +7,7 @@
         "dev": "cross-env ASPNETCORE_ENVIRONMENT=Development NODE_ENV=development dotnet run",
         "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --display-error-details",
         "install": "webpack --config webpack.config.vendor.js"
-    },
+    },    
     "dependencies": {
         "@aspnet/signalr-client": "^1.0.0-alpha1-10012",
         "axios": "^0.17.0",

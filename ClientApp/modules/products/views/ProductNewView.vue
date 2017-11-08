@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name:</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Product name.." v-model="product.name" class="form-control">
+                                <input type="text" placeholder="Product name.." v-model="product.name" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Price:</label>
                             <div class="col-md-10">
-                                <input type="text"  v-model="product.price" placeholder="$ 123.20" class="form-control">
+                                <input type="text"  v-model="product.price" placeholder="$ 123.20" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Quantity:</label>
                             <div class="col-md-10">
-                                <input type="number"v-model="product.quantity" placeholder="0" min="0" class="form-control">
+                                <input type="number"v-model="product.quantity" placeholder="0" min="0" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Tax :</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="20%" class="form-control">
+                                <input type="text" placeholder="20%" class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
@@ -72,7 +72,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Title</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Brief description.." class="form-control">
+                                <input type="text" placeholder="Brief description.." class="form-control"/>
                             </div>
                         </div>
                     </fieldset>
@@ -105,13 +105,13 @@
                     <div class="row mb-lg pb-lg bb">
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" title="Product 1">
-                                <img src="img/bg7.jpg" alt="Product 1" class="img-responsive">
+                                <img src="img/bg7.jpg" alt="Product 1" class="img-responsive"/>
                             </a>
                         </div>
                         <div class="col-xs-6 col-sm-9">
                             <fieldset>
                                 <div class="form-group">
-                                <input type="text" placeholder="Brief description.." class="form-control">
+                                <input type="text" placeholder="Brief description.." class="form-control"/>
                                 </div>
                             </fieldset>
                             <p>
@@ -119,17 +119,17 @@
                             </p>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod1-pic" value="option1" checked="">
+                                <input type="radio" name="prod1-pic" value="option1" checked=""/>
                                 <span></span>Primary</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod1-pic" value="option2">
+                                <input type="radio" name="prod1-pic" value="option2"/>
                                 <span></span>Thumbnail</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod1-pic" value="option3">
+                                <input type="radio" name="prod1-pic" value="option3"/>
                                 <span></span>Gallery</label>
                             </div>
                             <div class="text-right">
@@ -141,13 +141,13 @@
                     <div class="row mb-lg pb-lg bb">
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" title="Product 2">
-                                <img src="img/bg8.jpg" alt="Product 1" class="img-responsive">
+                                <img src="img/bg8.jpg" alt="Product 1" class="img-responsive"/>
                             </a>
                         </div>
                         <div class="col-xs-6 col-sm-9">
                             <fieldset>
                                 <div class="form-group">
-                                <input type="text" placeholder="Brief description.." class="form-control">
+                                <input type="text" placeholder="Brief description.." class="form-control"/>
                                 </div>
                             </fieldset>
                             <p>
@@ -155,17 +155,17 @@
                             </p>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod2-pic" value="option1" checked="">
+                                <input type="radio" name="prod2-pic" value="option1" checked=""/>
                                 <span></span>Primary</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod2-pic" value="option2">
+                                <input type="radio" name="prod2-pic" value="option2"/>
                                 <span></span>Thumbnail</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod2-pic" value="option3">
+                                <input type="radio" name="prod2-pic" value="option3"/>
                                 <span></span>Gallery</label>
                             </div>
                             <div class="text-right">
@@ -177,13 +177,13 @@
                     <div class="row mb-lg pb-lg">
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" title="Product 3">
-                                <img src="img/bg10.jpg" alt="Product 1" class="img-responsive">
+                                <img src="img/bg10.jpg" alt="Product 1" class="img-responsive"/>
                             </a>
                         </div>
                         <div class="col-xs-6 col-sm-9">
                             <fieldset>
                                 <div class="form-group">
-                                <input type="text" placeholder="Brief description.." class="form-control">
+                                <input type="text" placeholder="Brief description.." class="form-control"/>
                                 </div>
                             </fieldset>
                             <p>
@@ -191,17 +191,17 @@
                             </p>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod3-pic" value="option1" checked="">
+                                <input type="radio" name="prod3-pic" value="option1" checked=""/>
                                 <span></span>Primary</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod3-pic" value="option2">
+                                <input type="radio" name="prod3-pic" value="option2"/>
                                 <span></span>Thumbnail</label>
                             </div>
                             <div class="radio c-radio c-radio-nofont">
                                 <label>
-                                <input type="radio" name="prod3-pic" value="option3">
+                                <input type="radio" name="prod3-pic" value="option3"/>
                                 <span></span>Gallery</label>
                             </div>
                             <div class="text-right">
@@ -224,10 +224,17 @@
 <script>
 import axios from "axios";
 
+export const HTTP = axios.create({
+  baseURL: 'http://localhost:5000/',
+  headers: {
+    Authorization: 'Bearer {token}'
+  }
+})
 export default {
   name: "newProduct",
   data() {
     return {
+     errors:[],
       product: {
         name: '',
         description:'',
@@ -241,17 +248,50 @@ export default {
   },
   methods: {
     onSave() {
-      axios
-        .post('http://localhost:5000/api/ProductData/', { body: this.product })
+
+       debugger;
+       if(this.product.id===undefined)
+            Create();
+        else
+            Update();
+    },
+    onDiscard() {},
+
+    Create(){
+           debugger;
+
+        //https://github.com/axios/axios
+        //Content-Type: application/json; charset=utf-8
+        HTTP
+        //.post('api/ProductData/', { body: this.product })
+        //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
+        .post('api/ProductData/',  this.product, { headers: {'Content-Type': 'application/json'}} ) //work
         .then(response => {
-          console.log("post is OK");
+            console.log("post is OK");
         })
         .catch(e => {
-          debugger;
-          this.errors.push(e);
+            debugger;
+            this.errors.push(e);
         });
     },
-    onDiscard() {}
-  }
+    Update()
+    {
+           debugger;
+     //https://github.com/axios/axios
+        //Content-Type: application/json; charset=utf-8
+        HTTP
+            //.post('api/ProductData/', { body: this.product })
+                //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
+                //.post('api/ProductData/',  this.product,{ headers: {'Content-Type': 'application/json'}} ) //work
+                .post('api/ProductData/',  {id:'001', model:this.product}, { headers: {'Content-Type': 'application/json'}} )
+            .then(response => {
+              console.log("post is OK");
+            })
+            .catch(e => {
+              debugger;
+              this.errors.push(e);
+            });
+        }
+    }
 };
 </script>

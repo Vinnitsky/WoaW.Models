@@ -2,13 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace WoaW.Models.Products.Controllers
 {
     [Route("api/[controller]")]
     public class ProductDataController : Controller
     {
-        private static List<ProductModel> _products ;
+        private static List<ProductModel> _products;
         static ProductDataController()
         {
             _products = new List<ProductModel>();
@@ -108,6 +111,11 @@ namespace WoaW.Models.Products.Controllers
         {
             return GetProducts();
         }
+        [HttpGet()]
+        public IEnumerable<ProductModel> Get([FromRoute]string id)
+        {
+            return GetProducts();
+        }
 
         [HttpGet("[action]")]
         public IEnumerable<ProductModel> GetProducts()
@@ -122,12 +130,50 @@ namespace WoaW.Models.Products.Controllers
             // });
         }
 
-         [HttpPost()]
-        public void Post(ProductModel model)
+        [HttpPut()]
+        public async void Put([FromBody]ProductModel body)
         {
-            System.Diagnostics.Debug.WriteLine("Ok");
-            model.Added = DateTime.Now.ToString();
-            _products.Add(model);
+            //var json = Request.Content.ReadAsStringAsync();
+            //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            //{
+            //    var json = await reader.ReadToEndAsync();
+            //    var model = JsonConvert.DeserializeObject<ProductModel>(json);
+            //}
+
+            try
+            {
+                System.Diagnostics.Debug.WriteLine("Ok");
+                body.Added = DateTime.Now.ToString();
+                _products.Add(body);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
+        }
+
+        //public async void Post([FromBody]string id, [FromBody]ProductModel body)
+        [HttpPost()]
+        public async void Post([FromBody]string id, [FromBody]ProductModel model)
+        {
+            //var json = Request.Content.ReadAsStringAsync();
+            //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            //{
+            //    var json = await reader.ReadToEndAsync();
+            //    var model = JsonConvert.DeserializeObject<ProductModel>(json);
+            //}
+
+            try
+            {
+
+                System.Diagnostics.Debug.WriteLine("Ok");
+                model.Added = DateTime.Now.ToString();
+                _products.Add(model);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
         }
     }
 }

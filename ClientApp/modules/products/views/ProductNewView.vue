@@ -17,7 +17,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Name:</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="Product name.." class="form-control">
+                                <input type="text" placeholder="Product name.." v-model="product.name" class="form-control">
                             </div>
                         </div>
                     </fieldset>
@@ -25,7 +25,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Description:</label>
                             <div class="col-md-10">
-                                <textarea cols="5" placeholder="Short description.." class="form-control"></textarea>
+                                <textarea cols="5"  v-model="product.description" placeholder="Short description.." class="form-control"></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Price:</label>
                             <div class="col-md-10">
-                                <input type="text" placeholder="$ 123.20" class="form-control">
+                                <input type="text"  v-model="product.price" placeholder="$ 123.20" class="form-control">
                             </div>
                         </div>
                     </fieldset>
@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label">Quantity:</label>
                             <div class="col-md-10">
-                                <input type="number" placeholder="0" min="0" class="form-control">
+                                <input type="number"v-model="product.quantity" placeholder="0" min="0" class="form-control">
                             </div>
                         </div>
                     </fieldset>
@@ -61,6 +61,7 @@
                                 <option value="">Select..</option>
                                 <option value="0">Public</option>
                                 <option value="1">Pending</option>
+                                 <option value="2">Pending</option>
                                 </select>
                             </div>
                         </div>
@@ -214,20 +215,43 @@
             </div>
         </form>
         <div class="text-right mt-lg">
-            <button type="button" class="btn btn-warning">Discard</button>
-            <button type="button" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-warning" v-on:click="onDiscard">Discard</button>
+            <button type="button" class="btn btn-success" v-on:click="onSave">Save</button>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "newProduct",
   data() {
-    return {};
+    return {
+      product: {
+        name: '',
+        description:'',
+        price:0,
+        quantity:0
+      }
+    };
   },
-  created() {    
+  created() {
     var id = this.$route.query.id;
+  },
+  methods: {
+    onSave() {
+      axios
+        .post('http://localhost:5000/api/ProductData/', { body: this.product })
+        .then(response => {
+          console.log("post is OK");
+        })
+        .catch(e => {
+          debugger;
+          this.errors.push(e);
+        });
+    },
+    onDiscard() {}
   }
 };
 </script>

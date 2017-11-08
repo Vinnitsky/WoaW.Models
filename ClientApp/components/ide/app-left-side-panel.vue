@@ -64,7 +64,7 @@
                 <li class="nav-heading ">
                     <span data-localize="sidebar.heading.PRODUCTS">Products</span>
                 </li>
-                <product-navi-component v-bind:itemsSource="productsMenu.items"
+                <navi-group-control v-bind:itemsSource="productsMenu.items"
                     header="{text:'Products', number:3, icon:'icon-speedometer'}"
                     headerText="Products" headerIcon="icon-speedometer" headerNumber="3"
                     headerLink="#products"  headerLocalizationPath="sidebar.nav.PRODUCTS.Header"/>
@@ -84,7 +84,7 @@
                  <li class="nav-heading ">
                     <span data-localize="sidebar.heading.Docs">Documentation</span>
                 </li>
-                <product-navi-component v-bind:itemsSource="documentationsMenu.items"
+                <navi-group-control v-bind:itemsSource="documentationsMenu.items"
                     headerText="Documentation" headerIcon="icon-graduation"
                     headerNumber="3" headerLink="#docs" headerLocalizationPath="sidebar.nav.DOCUMENTATION.Header"/>
 
@@ -109,13 +109,13 @@
 </template>
 
 <script>
-import ProductNaviComponent from "modules/products/components/product-navi-control";
+import ProductNaviComponent from "components/ide/navi-group-control";
 // import Vue from "vue";
 // Vue.component( {'product-navi-component': ProductNaviComponent});
 
 export default {
   name: "leftSidePanel",
-  components: { "product-navi-component": ProductNaviComponent },
+  components: { "navi-group-control": ProductNaviComponent },
   created() {
     this.productsMenu = {header:{},items:[
       { title: "List", link: "/product-list",   localizationPath:"sidebar.nav.PRODUCTS.List", icon:"icon-speedometer" },

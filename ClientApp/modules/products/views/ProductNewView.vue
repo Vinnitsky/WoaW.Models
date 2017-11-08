@@ -236,6 +236,7 @@ export default {
     return {
       errors: [],
       product: {
+        id:'00000',
         name: "",
         description: "",
         price: 0,
@@ -250,12 +251,12 @@ export default {
     onSave() {
       debugger;
       if (this.product.id === undefined)
-        this.Create();
+        this.Create(this.product);
       else
-        this.Update();
+        this.Update(this.product.id, this.product);
     },
     onDiscard() {},
-    Create() {
+    Create(data) {
       debugger;
 
       //https://github.com/axios/axios
@@ -263,7 +264,7 @@ export default {
       HTTP
         //.post('api/ProductData/', { body: this.product })
         //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
-        .post("api/ProductData/", this.product, {
+        .put("api/ProductData/", data, {
           headers: { "Content-Type": "application/json" }
         }) //work
         .then(response => {
@@ -274,19 +275,13 @@ export default {
           this.errors.push(e);
         });
     },
-    Update() {
+    Update(id, data) {
       debugger;
       //https://github.com/axios/axios
       //Content-Type: application/json; charset=utf-8
       HTTP
-        //.post('api/ProductData/', { body: this.product })
         //.post('api/ProductData/',  this.product,{ headers: { Authorization: "Bearer " + token }} )
-        //.post('api/ProductData/',  this.product,{ headers: {'Content-Type': 'application/json'}} ) //work
-        .post(
-          "api/ProductData/",
-          { id: "001", model: this.product },
-          { headers: { "Content-Type": "application/json" } }
-        )
+        .post('api/ProductData/?id='+id, data ,{ headers: { "Content-Type": "application/json" }})        
         .then(response => {
           console.log("post is OK");
         })

@@ -19,43 +19,50 @@
 </style>
 
 <script>
-//https://docs.npmjs.com/files/package.json
-//https://stackoverflow.com/questions/14381898/local-dependency-in-package-json
-import "jquery.dataTables.min.js/js/jquery.dataTables.min.js";
-import "vendor/datatables-colvis/js/dataTables.colVis.js";
-import "dataTables-bootstrap/js/dataTables.bootstrap.js";
-import ProductListComponent from "modules/products/components/product-list";
-import axios from "axios";
-// import "../../../wwwroot/js/demo/demo-datatable.js";
-// import ProductService from "comonents/services/product-services";
+    //https://docs.npmjs.com/files/package.json
+    //https://stackoverflow.com/questions/14381898/local-dependency-in-package-json
+    import "jquery.dataTables.min.js/js/jquery.dataTables.min.js";
+    import "vendor/datatables-colvis/js/dataTables.colVis.js";
+    import "dataTables-bootstrap/js/dataTables.bootstrap.js";
+    import ProductListComponent from "modules/products/components/product-list";
+    import axios from "axios";
+    // import "../../../wwwroot/js/demo/demo-datatable.js";
+    // import ProductService from "comonents/services/product-services";
 
-export default {
-  components: { "product-list": ProductListComponent },
-  name: "productListView",
-  data() {
+    export const HTTP = axios.create({
+    baseURL: "http://localhost:5000/",
+    headers: {
+    Authorization: "Bearer {token}"
+    }
+    });
+
+    export default {
+    components: { "product-list": ProductListComponent },
+    name: "productListView",
+    data() {
     return {
-      status: {},
-      products: {},
-      errors: []
+    status: {},
+    products: {},
+    errors: []
     };
-  },
-  created() {
+    },
+    created() {
     this.products = [];
     this.refrashPage();
-  },
-  methods: {
+    },
+    methods: {
     refrashPage() {
-      axios
-        .get("http://localhost:5000/api/ProductData/") //.get("/api/status/${this.item.id}")
-        .then(res => {          
-          this.products = res.data;
-          this.status = res.status;
-          console.log(this.products);
-        })
-        .catch(e => {
-          debugger;
-          this.errors.push(e);
-        });
+    HTTP
+    .get("api/ProductData/") //.get("/api/status/${this.item.id}")
+    .then(res => {
+    this.products = res.data;
+    this.status = res.status;
+    console.log(this.products);
+    })
+    .catch(e => {
+    debugger;
+    this.errors.push(e);
+    });
     }
     // refrashPage: async function() {
     //   //   this.products = await ProductService.getProducts();
@@ -70,6 +77,6 @@ export default {
     //     this.errors.push(e);
     //   }
     // }
-  }
-};
+    }
+    };
 </script>

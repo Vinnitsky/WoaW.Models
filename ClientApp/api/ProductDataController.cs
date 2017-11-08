@@ -112,9 +112,15 @@ namespace WoaW.Models.Products.Controllers
             return GetProducts();
         }
         [HttpGet()]
-        public IEnumerable<ProductModel> Get([FromRoute]string id)
+        //[HttpGet("GetById")]
+        //[HttpGet("[action]")]
+        [Route("GetById")]
+        public ProductModel GetById([FromRoute]string id)
         {
-            return GetProducts();
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentNullException(nameof(id));
+
+            return _products.SingleOrDefault(x=>x.Id == id);
         }
 
         [HttpGet("[action]")]
@@ -131,8 +137,11 @@ namespace WoaW.Models.Products.Controllers
         }
 
         [HttpPut()]
-        public async void Put([FromBody]ProductModel body)
+        public async void Put([FromBody]ProductModel model)
         {
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
             //var json = Request.Content.ReadAsStringAsync();
             //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             //{
@@ -142,9 +151,10 @@ namespace WoaW.Models.Products.Controllers
 
             try
             {
+                model.Id = Guid.NewGuid().ToString("N");
                 System.Diagnostics.Debug.WriteLine("Ok");
-                body.Added = DateTime.Now.ToString();
-                _products.Add(body);
+                model.Added = DateTime.Now.ToString();
+                _products.Add(model);
             }
             catch (Exception ex)
             {
@@ -152,10 +162,14 @@ namespace WoaW.Models.Products.Controllers
             }
         }
 
-        //public async void Post([FromBody]string id, [FromBody]ProductModel body)
         [HttpPost()]
-        public async void Post([FromBody]string id, [FromBody]ProductModel model)
+        public async void Post(string id, [FromBody]ProductModel model)
         {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentNullException(nameof(id));
+            if (model == null)
+                throw new ArgumentNullException(nameof(model));
+
             //var json = Request.Content.ReadAsStringAsync();
             //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             //{
@@ -165,10 +179,13 @@ namespace WoaW.Models.Products.Controllers
 
             try
             {
-
                 System.Diagnostics.Debug.WriteLine("Ok");
-                model.Added = DateTime.Now.ToString();
-                _products.Add(model);
+
+                var item = _products.SingleOrDefault(x => x.Id == id);
+                item.Name = model.Name;
+                item.Description = model.Description;
+                item.Quantity = model.Quantity;
+                item.Price = model.Price;
             }
             catch (Exception ex)
             {

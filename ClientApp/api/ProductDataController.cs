@@ -99,12 +99,7 @@ namespace WoaW.Models.Products.Controllers
             //     },
 
             // };
-        }
-
-        private static string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        }            
 
         [HttpGet()]
         public IEnumerable<ProductModel> Get()
@@ -126,14 +121,7 @@ namespace WoaW.Models.Products.Controllers
         [HttpGet("[action]")]
         public IEnumerable<ProductModel> GetProducts()
         {
-            return _products;
-            // var rng = new Random();
-            // return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            // {
-            //     DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-            //     TemperatureC = rng.Next(-20, 55),
-            //     Summary = Summaries[rng.Next(Summaries.Length)]
-            // });
+            return _products;            
         }
 
         [HttpPut()]
@@ -169,13 +157,6 @@ namespace WoaW.Models.Products.Controllers
                 throw new ArgumentNullException(nameof(id));
             if (model == null)
                 throw new ArgumentNullException(nameof(model));
-
-            //var json = Request.Content.ReadAsStringAsync();
-            //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-            //{
-            //    var json = await reader.ReadToEndAsync();
-            //    var model = JsonConvert.DeserializeObject<ProductModel>(json);
-            //}
 
             try
             {

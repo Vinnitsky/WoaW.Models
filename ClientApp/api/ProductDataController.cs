@@ -104,6 +104,7 @@ namespace WoaW.Models.Products.Controllers
         [HttpGet()]
         public IEnumerable<ProductModel> Get()
         {
+            //System.Diagnostics.Debugger.Breack();
             return GetProducts();
         }
         [HttpGet()]

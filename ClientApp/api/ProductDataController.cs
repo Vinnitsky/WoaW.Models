@@ -152,7 +152,7 @@ namespace WoaW.Models.Products.Controllers
         }
 
         [HttpPost()]
-        public async void Post(string id, [FromBody]ProductModel model)
+        public void Post(string id, [FromBody]ProductModel model)
         {
             if (string.IsNullOrEmpty(id))
                 throw new ArgumentNullException(nameof(id));

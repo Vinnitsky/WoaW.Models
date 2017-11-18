@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/WoaW.TM.Web/v15/Server/sqlite3
+/WoaW.STS/bin/Debug/netcoreapp2.0
+/WoaW.STS/obj
+/WoaW.WebAPI/bin/Debug/netcoreapp2.0
+/WoaW.WebAPI/obj

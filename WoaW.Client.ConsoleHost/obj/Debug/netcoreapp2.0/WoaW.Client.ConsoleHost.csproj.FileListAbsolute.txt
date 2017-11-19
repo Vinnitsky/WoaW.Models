@@ -1,0 +1,11 @@
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\bin\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.deps.json
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\bin\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.runtimeconfig.json
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\bin\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.runtimeconfig.dev.json
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\bin\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.dll
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\bin\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.pdb
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.csprojResolveAssemblyReference.cache
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.csproj.CoreCompileInputs.cache
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.AssemblyInfoInputs.cache
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.AssemblyInfo.cs
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.dll
+C:\Temp\WoaW\WoaW.Models\WoaW.Client.ConsoleHost\obj\Debug\netcoreapp2.0\WoaW.Client.ConsoleHost.pdb

@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55763/",
+      "applicationUrl": "http://localhost:7000/",
       "sslPort": 0
     }
   },
@@ -16,11 +16,10 @@
     },
     "WoaW.STS": {
       "commandName": "Project",
-      "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:55764/"
+      "applicationUrl": "http://localhost:7000/"
     }
   }
 }

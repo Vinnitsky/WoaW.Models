@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IdentityModel.Tokens.Jwt;
 using Vue2SpaSignalR.Services.Hubs;
 
 namespace Vue2SpaSignalR
@@ -20,11 +21,29 @@ namespace Vue2SpaSignalR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
             services.AddSignalR();
 
             services.AddSingleton<IHostedService, Counter>();
             services.AddSingleton<IHostedService, Weather>();
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = "Cookies";
+                options.DefaultChallengeScheme = "oidc";
+            })
+                .AddCookie("Cookies")
+                .AddOpenIdConnect("oidc", options =>
+                {
+                    options.SignInScheme = "Cookies";
+
+                    options.Authority = "http://localhost:7000";
+                    options.RequireHttpsMetadata = false;
+
+                    options.ClientId = "mvc";
+                    options.SaveTokens = true;
+                });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -41,6 +60,11 @@ namespace Vue2SpaSignalR
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+
+            app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();
+
 
             app.UseStaticFiles();
             app.UseSignalR(routes =>

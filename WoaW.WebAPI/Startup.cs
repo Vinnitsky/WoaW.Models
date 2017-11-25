@@ -24,9 +24,20 @@ namespace WoaW.WebAPI
 
         // https://weblog.west-wind.com/posts/2016/Sep/26/ASPNET-Core-and-CORS-Gotchas
         // https://docs.microsoft.com/en-us/aspnet/core/security/cors
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvcCore()
+                .AddAuthorization()
+                .AddJsonFormatters();
+
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:7000";
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = "api1";
+                });
+
             //services.AddCors(options =>
             //{
             //    options.AddPolicy("CorsPolicy", builder =>
@@ -42,30 +53,16 @@ namespace WoaW.WebAPI
             {
                 options.AddPolicy("CorsPolicy",
                     builder =>
-                     {
-                         builder.WithOrigins("http://localhost:7002", "http://localhost:7000")
-                              .AllowAnyMethod()
-                              .AllowAnyHeader();
-                     });
+                    {
+                        builder.WithOrigins("http://localhost:7002", "http://localhost:7000")
+                             .AllowAnyMethod()
+                             .AllowAnyHeader();
+                    });
             });
             //services.Configure<MvcOptions>(options =>
             //{
             //    options.Filters.Add(new CorsAuthorizationFilterFactory("CorsPolicy"));
             //});
-
-
-            services.AddMvcCore()
-                .AddAuthorization()
-                .AddJsonFormatters();
-
-            services.AddAuthentication("Bearer")
-                .AddIdentityServerAuthentication(options =>
-                {
-                    options.Authority = "http://localhost:7000";
-                    options.RequireHttpsMetadata = false;
-
-                    options.ApiName = "api1";
-                });
 
         }
 

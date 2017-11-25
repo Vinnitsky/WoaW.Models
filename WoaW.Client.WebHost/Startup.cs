@@ -63,6 +63,7 @@ namespace Vue2SpaSignalR
 
 
             app.UseAuthentication();
+
             app.UseMvcWithDefaultRoute();
 
             app.UseStaticFiles();

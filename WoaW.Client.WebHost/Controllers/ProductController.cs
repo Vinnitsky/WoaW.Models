@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Vue2SpaSignalR.Controllers
 {
     public class ProductController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
             return View();

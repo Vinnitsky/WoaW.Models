@@ -21,9 +21,27 @@
     // import ProductService from "comonents/services/product-services";
 
     export const HTTP = axios.create({
-        baseURL: "http://localhost:7002/",
-        headers: { Authorization: "Bearer {token}" }
+        baseURL: "http://localhost:7001/",
+        //timeout: 10000,
+        //withCredentials: true,
+        //transformRequest: [(data) => JSON.stringify(data.data)],
+        headers: {
+            //Authorization: "Bearer {token}",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
     });
+
+    //import VueResource from 'vue-resource'
+    //Vue.use(VueResource)
+    ////Vue.http.options.xhr = { withCredentials: true }
+    //Vue.http.headers.common['Content-Type'] = 'application/json'
+    //Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'
+    //Vue.http.headers.common['Accept'] = 'application/json, text/plain, */*'
+    //Vue.http.headers.common['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin'
+    ////Vue.http.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:7002/'
+    ////Vue.http.headers.common['Access-Control-Request-Method'] = '*'
 
     export default {
         components: { "product-list": ProductListComponent },

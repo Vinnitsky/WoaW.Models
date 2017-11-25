@@ -8,7 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Cors.Internal;
 
 namespace WoaW.WebAPI
 {
@@ -21,10 +22,37 @@ namespace WoaW.WebAPI
 
         public IConfiguration Configuration { get; }
 
+        // https://weblog.west-wind.com/posts/2016/Sep/26/ASPNET-Core-and-CORS-Gotchas
+        // https://docs.microsoft.com/en-us/aspnet/core/security/cors
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("CorsPolicy", builder =>
+            //         builder.AllowAnyOrigin()
+            //                .AllowAnyMethod()
+            //                .AllowAnyHeader()
+            //                //.AllowCredentials()
+            //                );
+            //});
+
             services.AddMvc();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder =>
+                     {
+                         builder.WithOrigins("http://localhost:7002", "http://localhost:7000")
+                              .AllowAnyMethod()
+                              .AllowAnyHeader();
+                     });
+            });
+            //services.Configure<MvcOptions>(options =>
+            //{
+            //    options.Filters.Add(new CorsAuthorizationFilterFactory("CorsPolicy"));
+            //});
+
 
             services.AddMvcCore()
                 .AddAuthorization()
@@ -44,6 +72,8 @@ namespace WoaW.WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors("CorsPolicy");
+
             app.UseAuthentication();
 
             if (env.IsDevelopment())

@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 
 namespace WoaW.Models.Products.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/[controller]")]
     public class ProductDataController : Controller
     {

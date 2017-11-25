@@ -240,9 +240,18 @@
     import axios from "axios";
 
     export const HTTP = axios.create({
-        baseURL: "http://localhost:7002/",
-        headers: { Authorization: "Bearer {token}" }
+        baseURL: "http://localhost:7001/",
+        //timeout: 10000,
+        //withCredentials: true,
+        //transformRequest: [(data) => JSON.stringify(data.data)],
+        headers: {
+            //Authorization: "Bearer {token}",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        }
     });
+
 
     export default {
         name: "newProduct",

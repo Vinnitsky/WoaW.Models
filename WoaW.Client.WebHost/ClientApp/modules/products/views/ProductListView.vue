@@ -1,21 +1,12 @@
-<template >
+<template>
     <div id="productListView" class="content-wrapper">
         <div class="content-heading">Products</div>
-        <product-list v-bind:itemsSource="products"/>
+        <product-list v-bind:itemsSource="products" />
     </div>
 </template>
 
 <style lang="scss">
-//https://github.com/vuejs-templates/webpack/issues/604
-// https://stackoverflow.com/questions/43784202/how-to-include-css-files-in-vue-2
-// @import "vendor/datatables-colvis/css/dataTables.colVis.css";
-// @import "vendor/datatables/media/css/dataTables.bootstrap.css";
-// // @import "datatables-bootstrap/css/dataTables.bootstrap.css";
-// @import "vendor/dataTables.fontAwesome/index.css";
-@import "../../../../wwwroot/vendor/datatables-colvis/css/dataTables.colVis.css";
-@import "../../../../wwwroot/vendor/datatables/media/css/dataTables.bootstrap.css";
-// @import "datatables-bootstrap/css/dataTables.bootstrap.css";
-@import "../../../../wwwroot/vendor/dataTables.fontAwesome/index.css";
+    //https://github.com/vuejs-templates/webpack/issues/604 // https://stackoverflow.com/questions/43784202/how-to-include-css-files-in-vue-2 // @import "vendor/datatables-colvis/css/dataTables.colVis.css"; // @import "vendor/datatables/media/css/dataTables.bootstrap.css"; // // @import "datatables-bootstrap/css/dataTables.bootstrap.css"; // @import "vendor/dataTables.fontAwesome/index.css"; @import "../../../../wwwroot/vendor/datatables-colvis/css/dataTables.colVis.css"; @import "../../../../wwwroot/vendor/datatables/media/css/dataTables.bootstrap.css"; // @import "datatables-bootstrap/css/dataTables.bootstrap.css"; @import "../../../../wwwroot/vendor/dataTables.fontAwesome/index.css";
 </style>
 
 <script>
@@ -30,53 +21,51 @@
     // import ProductService from "comonents/services/product-services";
 
     export const HTTP = axios.create({
-    baseURL: "http://localhost:5000/",
-    headers: {
-    Authorization: "Bearer {token}"
-    }
+        baseURL: "http://localhost:7002/",
+        headers: { Authorization: "Bearer {token}" }
     });
 
     export default {
-    components: { "product-list": ProductListComponent },
-    name: "productListView",
-    data() {
-    return {
-    status: {},
-    products: {},
-    errors: []
-    };
-    },
-    created() {
-    this.products = [];
-    this.refrashPage();
-    },
-    methods: {
-    refrashPage() {
-    HTTP
-    .get("api/ProductData/") //.get("/api/status/${this.item.id}")
-    .then(res => {
-    this.products = res.data;
-    this.status = res.status;
-    console.log(this.products);
-    })
-    .catch(e => {
-    debugger;
-    this.errors.push(e);
-    });
-    }
-    // refrashPage: async function() {
-    //   //   this.products = await ProductService.getProducts();
-    //   try {
-    //     debugger;
-    //     const response = await axios.get(
-    //       "http://localhost:5000/api/ProductData/WeatherForecasts"
-    //     );
-    //     this.products = response.data;
-    //   } catch (e) {
-    //     debugger;
-    //     this.errors.push(e);
-    //   }
-    // }
-    }
+        components: { "product-list": ProductListComponent },
+        name: "productListView",
+        data() {
+            return {
+                status: {},
+                products: {},
+                errors: []
+            };
+        },
+        created() {
+            this.products = [];
+            this.refrashPage();
+        },
+        methods: {
+            refrashPage() {
+                HTTP
+                    .get("api/ProductData/") //.get("/api/status/${this.item.id}")
+                    .then(res => {
+                        this.products = res.data;
+                        this.status = res.status;
+                        console.log(this.products);
+                    })
+                    .catch(e => {
+                        debugger;
+                        this.errors.push(e);
+                    });
+            }
+            // refrashPage: async function() {
+            //   //   this.products = await ProductService.getProducts();
+            //   try {
+            //     debugger;
+            //     const response = await axios.get(
+            //       "http://localhost:5000/api/ProductData/WeatherForecasts"
+            //     );
+            //     this.products = response.data;
+            //   } catch (e) {
+            //     debugger;
+            //     this.errors.push(e);
+            //   }
+            // }
+        }
     };
 </script>

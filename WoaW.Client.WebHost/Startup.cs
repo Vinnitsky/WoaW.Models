@@ -65,8 +65,8 @@ namespace Vue2SpaSignalR
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
 
-
             app.UseStaticFiles();
+
             app.UseSignalR(routes =>
             {
                 routes.MapHub<CounterHub>("count");

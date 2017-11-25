@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "0b72fa180b74412d87c7c5c61f4b4b28",
+    "Name": "Product 1",
+    "Description": "Description for product 1",
+    "Price": 123.0,
+    "Quantity": 123,
+    "Status": 0,
+    "Added": "11/25/2017 9:19:25 PM",
+    "View": null
+  }
+]

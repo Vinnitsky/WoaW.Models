@@ -15,6 +15,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{21AC73
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoaW.Client.WebHost", "WoaW.Client.WebHost\WoaW.Client.WebHost.csproj", "{785DC468-04C3-48D4-AE54-0BA2D1A44654}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebTemplates", "WebTemplates", "{68E36736-EB37-4C8F-86CE-10D178C6BBEC}"
+	ProjectSection(SolutionItems) = preProject
+		WebTemplates\backend-jquery.zip = WebTemplates\backend-jquery.zip
+		WebTemplates\backend-mvc5-jquery.zip = WebTemplates\backend-mvc5-jquery.zip
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

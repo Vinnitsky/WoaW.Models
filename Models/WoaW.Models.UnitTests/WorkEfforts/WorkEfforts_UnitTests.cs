@@ -12,12 +12,12 @@ using WoaW.Models.WorkEfforts.WorkRequirements;
 namespace WoaW.Models.UnitTests.WorkEfforts
 {
     [TestClass]
+    [TestCategory("WorkEfforts")]
     public class WorkEfforts_UnitTests
     {
         [TestMethod]
         public void CreateTask_SuccessTest()
         {
-
             #region define parties
             var petya = new Person() { Id = "Петя" };
             var simenceKnowlage = new SkillType() { Id = "1", DisplayName = "Знание Сименс контроллеров" };

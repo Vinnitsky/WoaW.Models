@@ -22,3 +22,6 @@
 /Models/WoaW.Models.WorkEfforts/bin/
 /Models/WoaW.Models.WorkEfforts/obj
 
+/Models/WoaW.Models.UnitTests/bin/Debug
+/Models/WoaW.Models.UnitTests/obj/Debug
+/packages

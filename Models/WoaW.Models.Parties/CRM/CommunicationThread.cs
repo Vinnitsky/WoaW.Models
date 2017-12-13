@@ -9,7 +9,11 @@ namespace WoaW.Models.Parties.CRM
     /// </summary>
     public class CommunicationThread
     {
+        #region attributes
         private List<Communication> _communications;
+        #endregion
+
+        #region properties
         public Guid Id { get; set; }
         /// <summary>
         /// indicates the topic of the thread 
@@ -30,10 +34,20 @@ namespace WoaW.Models.Parties.CRM
         public PartySignature CommunicationThreadTerminator { get; set; }
 
         public IEnumerable<Communication> Communications { get; private set; }
+        #endregion
 
+        #region constructors
+        public CommunicationThread()
+        {
+            _communications = new List<Communication>();
+        }
+        #endregion
+
+        #region public API
         public void AddCommunication(Communication communication)
         {
             (_communications as List<Communication>).Add(communication);
         }
+        #endregion
     }
 }

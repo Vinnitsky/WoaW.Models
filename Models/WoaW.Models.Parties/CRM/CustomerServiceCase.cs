@@ -13,7 +13,11 @@ namespace WoaW.Models.Parties.CRM
     /// </summary>
     public class CustomerServiceCase
     {
+        #region attributes
         private List<CommunicationThread> _communicationThreads;
+        #endregion
+
+        #region properties
         public CustomerServiceCaseIdentifier Id { get; set; }
         /// <summary>
         /// The title of the case—this should summarize the nature of the case, e.g., "Complaint about call out service"
@@ -46,19 +50,26 @@ namespace WoaW.Models.Parties.CRM
         /// cases may be prioritized as "low", "medium", or "high" priority
         /// </summary>
         public int Priority { get; set; }
+        public IEnumerable<CommunicationThread> CommunicationThreads { get; private set; }
+        #endregion
 
+        #region constructors
         public CustomerServiceCase()
         {
             Id = new CustomerServiceCaseIdentifier(Guid.NewGuid());
+            _communicationThreads = new List<CommunicationThread>();
         }
-        public CustomerServiceCase(CustomerServiceCaseIdentifier id)
+        public CustomerServiceCase(CustomerServiceCaseIdentifier id):this()
         {
             Id = id;
         }
-        public IEnumerable<CommunicationThread> CommunicationThreads { get; private set; }
+        #endregion
+
+        #region public API
         public void AddThread(CommunicationThread thread)
         {
             (_communicationThreads as List<CommunicationThread>).Add(thread);
         }
+        #endregion
     }
 }

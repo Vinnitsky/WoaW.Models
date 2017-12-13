@@ -14,6 +14,7 @@ using WoaW.Models.Parties.Root;
 namespace WoaW.Models.UnitTests
 {
     [TestClass]
+    [TestCategory("WorkEfforts")]
     public class WorkEffortsRequirements_UnitTests
     {
         /// <summary>

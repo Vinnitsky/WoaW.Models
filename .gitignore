@@ -2,8 +2,23 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/WoaW.TM.Web/v15/Server/sqlite3
-/WoaW.STS/bin/Debug/netcoreapp2.0
+/.vs/WoaW.TM.Web/
+
+#server
+/WoaW.STS/bin/
 /WoaW.STS/obj
-/WoaW.WebAPI/bin/Debug/netcoreapp2.0
+/WoaW.WebAPI/bin/
 /WoaW.WebAPI/obj
+
+#clients
+/WoaW.Client.ConsoleHost/bin/
+/WoaW.Client.ConsoleHost/obj
+
+#models
+/Models/WoaW.Models.Common/bin/
+/Models/WoaW.Models.Common/obj
+/Models/WoaW.Models.Parties/bin/
+/Models/WoaW.Models.Parties/obj
+/Models/WoaW.Models.WorkEfforts/bin/
+/Models/WoaW.Models.WorkEfforts/obj
+

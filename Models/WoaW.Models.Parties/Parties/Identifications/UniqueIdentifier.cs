@@ -8,11 +8,11 @@ namespace WoaW.Models.Parties.Identifications
     /// </summary>
     public class UniqueIdentifier
     {
-        private readonly Guid _id;
-        public UniqueIdentifier(Guid id)
+        private readonly string _id;
+        public UniqueIdentifier(string id)
         {
             _id = id;
         }
-        public Guid Id { get { return _id; } }
+        public string Id { get { return _id; } }
     }
 }

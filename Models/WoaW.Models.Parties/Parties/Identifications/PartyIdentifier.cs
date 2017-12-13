@@ -16,10 +16,17 @@ namespace WoaW.Models.Parties.Identifications
     /// </summary>
     public class PartyIdentifier : UniqueIdentifier
     {
-        public PartyIdentifier(Guid id):base(id)
+        public PartyIdentifier(Guid id):base(id.ToString("N"))
+        {
+        }
+        public PartyIdentifier(string id):base(id)
         {
         }
 
+        public static implicit operator PartyIdentifier(string id)
+        {
+            return new PartyIdentifier(id);
+        }
     }//end Identification
 
 }//end namespace Identification

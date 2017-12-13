@@ -8,7 +8,11 @@ namespace WoaW.Models.Parties.CRM
     /// </summary>
     public class CustomerServiceCaseIdentifier : UniqueIdentifier
     {
-        public CustomerServiceCaseIdentifier(Guid id):base(id)
+        public CustomerServiceCaseIdentifier(Guid id):base(id.ToString("N"))
+        {
+
+        }
+        public CustomerServiceCaseIdentifier(string id):base(id)
         {
 
         }

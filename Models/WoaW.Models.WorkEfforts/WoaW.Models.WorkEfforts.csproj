@@ -4,4 +4,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WoaW.Models.Common\WoaW.Models.Common.csproj" />
+    <ProjectReference Include="..\WoaW.Models.Parties\WoaW.Models.Parties.csproj" />
+  </ItemGroup>
+
 </Project>

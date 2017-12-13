@@ -1,14 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace WoaW.Models.WorkEfforts.Generation
 {
     public class WorkOrderItemFulfilment
     {
+        #region attributes
+        private List<WorkOrderItem> _workOrderItems;
+        #endregion
+
         #region properties
-        public WorkOrderItem WorkOrderItem { get; set; }
+        public List<WorkOrderItem> WorkOrderItems { get { return _workOrderItems; } set { _workOrderItems = value; } }
         public WorkEffort WorkEffort { get; set; }
+        #endregion
+
+        #region constructors
+        public WorkOrderItemFulfilment()
+        {
+            _workOrderItems = new List<WorkOrderItem>();
+        }
         #endregion
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="Parties\RelationshipUnitTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkEfforts\WorkEfforts_UnitTests.cs" />
     <Compile Include="WorkEfforts\WorkEffortsRequirements_UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>

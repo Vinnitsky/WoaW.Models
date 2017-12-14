@@ -14,5 +14,13 @@ namespace WoaW.Models.WorkEfforts.Generation
         public List<WorkEffort> WorkEfforts { get { return _workEfforts; } set { _workEfforts = value; } }
         public List<WorkRequirement> Requirements { get { return _requirements; } set { _requirements = value; } }
         #endregion
+
+        #region constructors
+        public WorkRequirementFulfilment()
+        {
+            WorkEfforts = new List<WorkEffort>();
+            Requirements = new List<WorkRequirement>();
+        }
+        #endregion
     }
 }

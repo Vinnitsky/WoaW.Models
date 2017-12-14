@@ -16,7 +16,7 @@ namespace WoaW.Models.WorkEfforts.WorkRequirements
 
         #region properties
         public WorkRequirement PertOf { get; set; }
-        public IEnumerable<WorkRequirement> ComposedOf { get; set; }
+        public List<WorkRequirement> ComposedOf { get; set; }
 
         public WorkRequirementType WorkRequirementType
         {

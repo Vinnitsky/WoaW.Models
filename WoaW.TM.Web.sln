@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoaW.Models.Common", "Model
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoaW.Models.UnitTests", "Models\WoaW.Models.UnitTests\WoaW.Models.UnitTests.csproj", "{803BA033-16AB-45DC-A993-F3AB498BCA16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoaW.Models.Products", "Models\WoaW.Models.Products\WoaW.Models.Products.csproj", "{93D78F41-6322-4007-893F-43D7D619B534}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{803BA033-16AB-45DC-A993-F3AB498BCA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{803BA033-16AB-45DC-A993-F3AB498BCA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{803BA033-16AB-45DC-A993-F3AB498BCA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D78F41-6322-4007-893F-43D7D619B534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D78F41-6322-4007-893F-43D7D619B534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D78F41-6322-4007-893F-43D7D619B534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D78F41-6322-4007-893F-43D7D619B534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{335098DE-E410-4822-9AB3-415CF35B4CC7} = {C210D273-D029-4D36-A23E-CF833A813B99}
 		{3AEFDD7B-E590-4942-A6D1-2181ADC69CAF} = {C210D273-D029-4D36-A23E-CF833A813B99}
 		{803BA033-16AB-45DC-A993-F3AB498BCA16} = {C210D273-D029-4D36-A23E-CF833A813B99}
+		{93D78F41-6322-4007-893F-43D7D619B534} = {C210D273-D029-4D36-A23E-CF833A813B99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04E0BE98-0A7D-4CAD-901A-079384E6D51E}

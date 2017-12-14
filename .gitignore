@@ -21,6 +21,8 @@
 /Models/WoaW.Models.Parties/obj
 /Models/WoaW.Models.WorkEfforts/bin/
 /Models/WoaW.Models.WorkEfforts/obj
+/Models/WoaW.Models.Products/bin/
+/Models/WoaW.Models.Products/obj
 
 /Models/WoaW.Models.UnitTests/bin/Debug
 /Models/WoaW.Models.UnitTests/obj/Debug

@@ -3,10 +3,11 @@
     public sealed class UnitOfMeasure
     {
         #region attributes
-        public static readonly FixedAssetType Meter = new FixedAssetType() { Id = "1", DisplayName = "Meter" };
-        public static readonly FixedAssetType Milimeter = new FixedAssetType() { Id = "2", DisplayName = "Milimeter" };
-        public static readonly FixedAssetType Santimeter = new FixedAssetType() { Id = "3", DisplayName = "Santimeter" };
-        public static readonly FixedAssetType Kilogram = new FixedAssetType() { Id = "4", DisplayName = "Kilogram" };
+        public static readonly UnitOfMeasure Meter = new UnitOfMeasure() { Id = "1", DisplayName = "Meter" };
+        public static readonly UnitOfMeasure Milimeter = new UnitOfMeasure() { Id = "2", DisplayName = "Milimeter" };
+        public static readonly UnitOfMeasure Santimeter = new UnitOfMeasure() { Id = "3", DisplayName = "Santimeter" };
+        public static readonly UnitOfMeasure Kilogram = new UnitOfMeasure() { Id = "4", DisplayName = "Kilogram" };
+        public static readonly UnitOfMeasure Unit = new UnitOfMeasure() { Id = "5", DisplayName = "Unit" };
         #endregion
 
         #region properties

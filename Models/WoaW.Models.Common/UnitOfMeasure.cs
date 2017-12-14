@@ -1,4 +1,4 @@
-﻿namespace WoaW.Models.WorkEfforts.Assignments
+﻿namespace WoaW.Models.Common
 {
     public sealed class UnitOfMeasure
     {

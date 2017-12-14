@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WoaW.Models.Products;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using WoaW.Models.Products.ProductCategories;
 using WoaW.Models.Products.Products;
 
 namespace WoaW.Models.UnitTests.Products
@@ -11,8 +11,43 @@ namespace WoaW.Models.UnitTests.Products
         [TestMethod]
         public void CreateProduct_SuccessTest()
         {
-            var unit = new Good();
+            #region define product
+            var product = new Good();
+            #endregion
 
+            #region define product category
+            var category1 = new ProductCategory() { Name = "Category 1" };
+            var category1_1 = new ProductCategory() { Name = "Category 1.1" };
+            var category2 = new ProductCategory() { Name = "Category 2" };
+            #endregion
+
+            #region bind categories with product
+            var clasificatin1 = new ProductCategoryClassification();
+            clasificatin1.ProductCategory = category1_1;
+            clasificatin1.Product = product;
+            clasificatin1.FromDate = DateTime.Now;
+            clasificatin1.ThruDate = DateTime.Now;
+
+            var clasificatin2 = new ProductCategoryClassification();
+            clasificatin2.ProductCategory = category2;
+            clasificatin2.Product = product;
+            clasificatin2.FromDate = DateTime.Now;
+            clasificatin2.ThruDate = DateTime.Now;
+            clasificatin2.PrimaryFlag = true;
+            #endregion
+
+            #region define subcategory
+            var rollup = new ProductCategoryRollup
+            {
+                Name = "Subcategory"
+            };
+            rollup.CategoriesOwner.Add(category1);
+            rollup.CategoriesChild.Add(category1_1);
+            #endregion
+
+            #region define product features
+
+            #endregion
         }
     }
 }

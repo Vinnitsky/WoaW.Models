@@ -1,4 +1,5 @@
 ﻿using System;
+using WoaW.Models.Common;
 
 namespace WoaW.Models.WorkEfforts.Assignments
 {

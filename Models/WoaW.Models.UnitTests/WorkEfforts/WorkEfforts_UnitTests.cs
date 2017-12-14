@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WoaW.Models.Common;
 using WoaW.Models.Parties.Persons;
 using WoaW.Models.Parties.Root;
 using WoaW.Models.Products;

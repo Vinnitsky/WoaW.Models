@@ -1,4 +1,4 @@
-﻿using WoaW.Models.Common.Inventory;
+﻿using WoaW.Models.Products.Products;
 
 namespace WoaW.Models.WorkEfforts.Standards
 {

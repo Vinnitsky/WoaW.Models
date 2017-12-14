@@ -10,6 +10,7 @@ using WoaW.Models.WorkEfforts.Standards;
 using WoaW.Models.WorkEfforts.Associations;
 using WoaW.Models.Parties.Persons;
 using WoaW.Models.Parties.Root;
+using WoaW.Models.Products.Products;
 
 namespace WoaW.Models.UnitTests
 {
@@ -54,12 +55,12 @@ namespace WoaW.Models.UnitTests
             #endregion
 
             #region define product
-            var unit = new Product() { Id = "1", DisplayName = "Щит" };
-            var samsungController = new Product() { Id = "1", DisplayName = "Самсунг контроллер" };
-            var simenceController = new Product() { Id = "1", DisplayName = "Сименс контроллер" };
+            var unit = new Good() { Id = "1", DisplayName = "Щит" };
+            var samsungController = new Good() { Id = "1", DisplayName = "Самсунг контроллер" };
+            var simenceController = new Good() { Id = "1", DisplayName = "Сименс контроллер" };
 
-            var samsungControllerProgramm = new Product() { Id = "1", DisplayName = "программа для самсунг контроллера" };
-            var simenceControllerProgramm = new Product() { Id = "1", DisplayName = "программа для сименс контроллера" };
+            var samsungControllerProgramm = new Good() { Id = "1", DisplayName = "программа для самсунг контроллера" };
+            var simenceControllerProgramm = new Good() { Id = "1", DisplayName = "программа для сименс контроллера" };
             #endregion
 
             #region define assets

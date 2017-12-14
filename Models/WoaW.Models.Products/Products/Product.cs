@@ -2,7 +2,7 @@
 
 namespace WoaW.Models.Products
 {
-    public class Product
+    public abstract class Product
     {
         public string Id { get; set; }
         public string DisplayName { get; set; }

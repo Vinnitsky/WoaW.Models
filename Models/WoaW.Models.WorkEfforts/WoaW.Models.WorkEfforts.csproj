@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\WoaW.Models.Common\WoaW.Models.Common.csproj" />
     <ProjectReference Include="..\WoaW.Models.Parties\WoaW.Models.Parties.csproj" />
+    <ProjectReference Include="..\WoaW.Models.Products\WoaW.Models.Products.csproj" />
   </ItemGroup>
 
 </Project>

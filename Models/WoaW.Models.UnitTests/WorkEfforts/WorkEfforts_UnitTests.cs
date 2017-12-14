@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WoaW.Models.Parties.Persons;
 using WoaW.Models.Parties.Root;
 using WoaW.Models.Products;
+using WoaW.Models.Products.Products;
 using WoaW.Models.Requirements;
 using WoaW.Models.WorkEfforts.Assignments;
 using WoaW.Models.WorkEfforts.Generation;
@@ -38,7 +39,7 @@ namespace WoaW.Models.UnitTests.WorkEfforts
 
             #region define product
             /// описваем продукт
-            var product = new Product()
+            var product = new Good()
             {
                 Id = Guid.NewGuid().ToString("N"),
                 DisplayName = "установка кондиционирования воздуха",

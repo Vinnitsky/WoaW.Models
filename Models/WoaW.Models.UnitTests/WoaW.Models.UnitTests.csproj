@@ -51,6 +51,7 @@
     <Compile Include="CRM\Communication_UnitTests.cs" />
     <Compile Include="CRM\CRM_UnitTests.cs" />
     <Compile Include="Parties\RelationshipUnitTest.cs" />
+    <Compile Include="Products\Products_UnitTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkEfforts\WorkEfforts_UnitTests.cs" />
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\WoaW.Models.Parties\WoaW.Models.Parties.csproj">
       <Project>{44ac1e8e-5091-4f09-a358-253154357b24}</Project>
       <Name>WoaW.Models.Parties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WoaW.Models.Products\WoaW.Models.Products.csproj">
+      <Project>{93d78f41-6322-4007-893f-43d7d619b534}</Project>
+      <Name>WoaW.Models.Products</Name>
     </ProjectReference>
     <ProjectReference Include="..\WoaW.Models.WorkEfforts\WoaW.Models.WorkEfforts.csproj">
       <Project>{335098de-e410-4822-9ab3-415cf35b4cc7}</Project>

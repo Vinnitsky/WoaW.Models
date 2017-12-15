@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using WoaW.Models.Products.ProductCategories;
+using WoaW.Models.Products.ProductFeatures;
 using WoaW.Models.Products.Products;
 
 namespace WoaW.Models.UnitTests.Products
@@ -46,7 +47,33 @@ namespace WoaW.Models.UnitTests.Products
             #endregion
 
             #region define product features
+            var featureCategory = new ProductFeatureCategory() { Id = "1", Name = "feature category" };
 
+            var optionalFeatures = new ProductFeatureApplicability
+            {
+                Product = product,
+                ApplicabilityType = FeatureApplicabilityType.OptionalFeature
+            };
+            var colorFeature = new ProductFeature
+            {
+                Name = "Color",
+                ProductFeatureCategory = featureCategory
+            };
+            optionalFeatures.ProductFeature.Add(colorFeature);
+
+            var sizeFeature = new ProductFeature
+            {
+                Name = "Size",
+                ProductFeatureCategory = featureCategory
+            };
+            optionalFeatures.ProductFeature.Add(sizeFeature);
+
+            var hardwareFeatures = new ProductFeatureApplicability
+            {
+                Product = product,
+                ApplicabilityType = FeatureApplicabilityType.RequiredFeature
+            };
+            hardwareFeatures.ProductFeature.Add(ProductFeature.HardwareFeature);
             #endregion
         }
     }

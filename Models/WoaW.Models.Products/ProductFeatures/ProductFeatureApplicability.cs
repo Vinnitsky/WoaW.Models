@@ -22,5 +22,15 @@ namespace WoaW.Models.Products.ProductFeatures
             ProductFeature = new List<ProductFeature>();
         }
         #endregion
+
+        #region public API
+        public void AddFeature(ProductFeature feature, FeatureApplicabilityType type)
+        {
+            if (feature == null)
+                throw new ArgumentNullException(nameof(feature));
+            if (type == null)
+                throw new ArgumentNullException(nameof(type));
+        }
+        #endregion
     }
 }

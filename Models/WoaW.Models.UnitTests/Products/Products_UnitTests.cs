@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using WoaW.Models.Common;
 using WoaW.Models.Products.ProductCategories;
 using WoaW.Models.Products.ProductFeatures;
 using WoaW.Models.Products.Products;
@@ -59,6 +60,7 @@ namespace WoaW.Models.UnitTests.Products
                 Name = "Color",
                 ProductFeatureCategory = featureCategory
             };
+            //colorFeature.UnitOfMeasure = UnitOfMeasure.
             optionalFeatures.ProductFeature.Add(colorFeature);
 
             var sizeFeature = new ProductFeature
@@ -66,6 +68,7 @@ namespace WoaW.Models.UnitTests.Products
                 Name = "Size",
                 ProductFeatureCategory = featureCategory
             };
+            sizeFeature.UnitOfMeasure = UnitOfMeasure.Santimeter;
             optionalFeatures.ProductFeature.Add(sizeFeature);
 
             var hardwareFeatures = new ProductFeatureApplicability
@@ -74,6 +77,16 @@ namespace WoaW.Models.UnitTests.Products
                 ApplicabilityType = FeatureApplicabilityType.RequiredFeature
             };
             hardwareFeatures.ProductFeature.Add(ProductFeature.HardwareFeature);
+            #endregion
+
+            #region define relationship dependence for product features
+            var c = new ProductFeatureInteraction
+            {
+                Product = product
+            };
+            c.ProductFeatures1.Add(colorFeature);
+            c.ProductFeatures2.Add(sizeFeature);
+            c.ProductInteractionType = ProductInteractionType.Dependency;
             #endregion
         }
     }

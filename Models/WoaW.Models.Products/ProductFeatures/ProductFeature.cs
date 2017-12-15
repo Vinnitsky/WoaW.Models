@@ -1,4 +1,6 @@
-﻿namespace WoaW.Models.Products.ProductFeatures
+﻿using WoaW.Models.Common;
+
+namespace WoaW.Models.Products.ProductFeatures
 {
     public sealed class ProductFeature
     {
@@ -16,6 +18,7 @@
         public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public UnitOfMeasure UnitOfMeasure { get; set; }
         public ProductFeatureCategory ProductFeatureCategory { get; set; }
         #endregion
     }

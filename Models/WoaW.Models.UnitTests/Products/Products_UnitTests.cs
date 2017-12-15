@@ -88,6 +88,7 @@ namespace WoaW.Models.UnitTests.Products
             c.ProductFeatures2.Add(sizeFeature);
             c.ProductInteractionType = ProductInteractionType.Dependency;
             #endregion
+
         }
     }
 }

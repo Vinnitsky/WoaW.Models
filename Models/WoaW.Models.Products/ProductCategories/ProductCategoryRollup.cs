@@ -15,5 +15,13 @@ namespace WoaW.Models.Products.ProductCategories
         public string Name { get; set; }
 
         #endregion
+
+        #region cnstructors
+        public ProductCategoryRollup()
+        {
+            CategoriesOwner = new List<ProductCategory>();
+            CategoriesChild = new List<ProductCategory>();
+        }
+        #endregion
     }
 }
